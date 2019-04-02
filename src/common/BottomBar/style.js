@@ -1,18 +1,23 @@
 import styled from 'styled-components';
 
-export const TabWrapper = styled.div`
+function px2rem(pxValue) {
+    const rem = 37.5;
+    return `${pxValue / rem}rem`;
+}
+
+const TabWrapper = styled.div`
     position:fixed;
     bottom:0;
     width:100%;
-    height:50px;
+    height:${px2rem(50)};
     display:flex;
-    border-top: 1px solid #b6b6b6;
+    border-top: ${px2rem(1)} solid #b6b6b6;
     background-color:rgba(246,246,246,0.95);
 `;
 
-export const TabItem = styled.div`
+const TabItem = styled.div`
     flex:1;
-    font-size:11px;
+    font-size:${px2rem(11)};
     display:flex;
     flex-direction:column;
     align-items:center;
@@ -23,9 +28,9 @@ export const TabItem = styled.div`
     }
 
     .tab-icon{
-        margin-bottom:4px;
-        width:25px;
-        height:25px;
+        margin-bottom:${px2rem(4)};
+        width:${px2rem(25)};
+        height:${px2rem(25)};
         background-size:cover;
     }
 
@@ -67,30 +72,4 @@ export const TabItem = styled.div`
 
 `;
 
-export const TabIcon = styled.div`
-   
-    
-    &.home{
-        background-image:url('img/homeIcon.png');
-        &.active{
-            background-image:url('img/homeIconActive.png');
-        }
-    }
-    &.my{
-        background-image:url('img/myIcon.png');
-        &.active{
-            background-image:url('img/myIconActive.png');
-        }
-    }
-    &.order{
-        background-image:url('img/orderIcon.png');
-        &.active{
-            background-image:url('img/orderIconActive.png');
-        }
-    }
-`;
-
-export const TabName = styled.div`
-`;
-
-
+export { TabWrapper, TabItem };

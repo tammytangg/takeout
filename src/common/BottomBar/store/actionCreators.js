@@ -1,8 +1,8 @@
-import * as actionTypes from './actionTypes';
+import CHANGE_TAB from './actionTypes';
 
-export const changeTab = (key) =>{
-    return{
-        type:actionTypes.CHANGE_TAB,
-        key: key
-    }
-}
+const changeTab = key => ({
+  type: CHANGE_TAB,
+  key,
+});
+
+export default { changeTab };
