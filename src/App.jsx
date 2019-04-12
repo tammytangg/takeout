@@ -1,15 +1,15 @@
 import React from 'react';
-import { Provider } from 'react-redux';
+import { hot } from 'react-hot-loader';
 import GlobalResetStyle from './style';
 import BottomBar from './common/BottomBar';
-import store from './store';
-
+import Home from './common/Home';
 
 const App = () => (
-	<Provider store={store}>
+	<div>
 		<GlobalResetStyle />
+		<Home />
 		<BottomBar />
-	</Provider>
+	</div>
 );
 
-export default App;
+export default hot(module)(App);
