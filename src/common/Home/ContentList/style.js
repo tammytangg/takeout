@@ -21,12 +21,6 @@ const ContentListWrapper = styled.div`
 		margin-right: ${px2rem(4)};
 		margin-bottom: ${px2rem(5)};
 	}
-	.loading{
-		padding-top: 10px;
-		padding-bottom: 10px;
-		font-size: 14px;
-		text-align: center;
-	}
 `;
 
 export default ContentListWrapper;

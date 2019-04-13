@@ -18,7 +18,7 @@ const ListItemWrapper = styled.div`
 	.item-img {
 		width: ${px2rem(86)};
 		height: ${px2rem(65)};
-		border: 1px solid #e4e4e4;
+		border: ${px2rem(1)} solid #e4e4e4;
 	}
 	.item-info-content {
 		flex: 1;
@@ -26,10 +26,10 @@ const ListItemWrapper = styled.div`
 	}
 	.brand{
 		position: absolute;
-		left: 1px;
-		top: 16px;
-		font-size: 12px;
-		padding: 2px;
+		left: ${px2rem(1)};
+		top: ${px2rem(16)};
+		font-size: ${px2rem(12)};
+		padding: ${px2rem(2)};
 		color: #fff;
 		background-color: #ffa627;
 	}
@@ -40,18 +40,18 @@ const ListItemWrapper = styled.div`
 		background-color: #21c56c;
 	}
 	.item-title{
-		margin-top: 3px;
-		font-size: 16px;
+		margin-top: ${px2rem(3)};
+		font-size: ${px2rem(16)};
 		font-weight: 500;
 		color: #333;
 	}
 	.item-desc {
-		margin-top: 13px;
-		font-size: 12px;
+		margin-top: ${px2rem(13)};
+		font-size: ${px2rem(12)};
 	}
 	.star {
-		width: 10px;
-		height: 10px;
+		width: ${px2rem(10)};
+		height: ${px2rem(10)};
 		float: left;
 		background-size: cover;
 	}
@@ -69,7 +69,7 @@ const ListItemWrapper = styled.div`
 	}
 	.item-count {
 		float: left; 
-		margin-left: 5px;
+		margin-left: ${px2rem(5)};
 	}
 	.item-distance {
 		float: right;
@@ -83,25 +83,25 @@ const ListItemWrapper = styled.div`
 	}
 	.other-info {
 		color: #898989;
-		margin-top: 7px;
-		font-size: 12px;
+		margin-top: ${px2rem(7)};
+		font-size: ${px2rem(12)};
 	}
 	.other-tag {
-		width: 14px;
-		height: 14px;
+		width: ${px2rem(14)};
+		height: ${px2rem(14)};
 		display: inline-block;
 	}
 	.other-content {
 		display: inline-block;
-		vertical-align: 3px;
-		margin-left: 3px;
-		height: 14px;
-		width: 230px;
+		vertical-align: ${px2rem(3)};
+		margin-left: ${px2rem(3)};
+		height: ${px2rem(14)};
+		width: ${px2rem(230)};
 	}
 	.item-price {
-		margin-top: 10px;
-		font-size: 12px;
-		height: 24px;
+		margin-top: ${px2rem(10)};
+		font-size: ${px2rem(12)};
+		height: ${px2rem(24)};
 	}
 	.item-pre-price {
 		float: left;

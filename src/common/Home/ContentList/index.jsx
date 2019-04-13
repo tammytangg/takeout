@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ContentListWrapper from './style';
 import ListItem from './ListItem';
+import ScrollView from '../../ScrollView';
 import { actionCreators } from '../store';
 
 /**
@@ -14,35 +15,22 @@ class ContentList extends Component {
 		super(props);
 		const { fetchData } = this.props;
 		this.state = {
-			loadingText: '加载中',
+			isend: false,
 		};
 		this.page = 0;
 		fetchData( this.page );
 	}
 
-	componentWillMount() {
-		window.addEventListener('scroll', ContentList.onLoadPage.bind(this));
-	}
-
-	componentWillUnmount() {
-		window.removeEventListener('scroll', ContentList.onLoadPage.bind(this));
-	}
-
-	static onLoadPage() {
-		const { clientHeight } = document.documentElement;
-		const { scrollHeight } = document.body;
-		const { scrollTop } = document.documentElement;
-		const proLoadDis = 30;
-		if ((scrollTop + clientHeight) >= (scrollHeight - proLoadDis)) {
-			this.page = this.page + 1;
-			if ( this.page < 2) {
-				const { fetchData } = this.props;
-				fetchData(this.page);
-			} else {
-				this.setState({
-					loadingText: '加载完成',
-				});
-			}
+	onLoadPage() {
+		// console.log('load page');
+		this.page = this.page + 1;
+		if ( this.page < 2) {
+			const { fetchData } = this.props;
+			fetchData(this.page);
+		} else {
+			this.setState({
+				isend: true,
+			});
 		}
 	}
 
@@ -55,7 +43,7 @@ class ContentList extends Component {
 	}
 
 	render() {
-		const { loadingText } = this.state;
+		const { isend } = this.state;
 		return (
 			<ContentListWrapper>
 				<h4 className="list-title">
@@ -63,10 +51,9 @@ class ContentList extends Component {
 					<span>Resturants</span>
 					<span className="title-line" />
 				</h4>
-				<div>
+				<ScrollView loadCallBack={() => this.onLoadPage()} isend={isend}>
 					{this.renderItems()}
-					<div className="loading">{loadingText}</div>
-				</div>
+				</ScrollView>
 			</ContentListWrapper>
 		);
 	}

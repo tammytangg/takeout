@@ -68,6 +68,11 @@ const GlobalResetStyle = createGlobalStyle`
 	  -webkit-transform-origin: 0, 0;
 	  transform-origin: 0, 0;
   }
+  .one-line {
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	  white-space: nowrap;
+  }
 `;
 
 export default GlobalResetStyle;
