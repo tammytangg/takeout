@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { actionCreators } from './store';
 
 import { TabWrapper, TabItem } from './style';
@@ -11,6 +12,9 @@ import { TabWrapper, TabItem } from './style';
 
 class BottomBar extends Component {
 	changeTab(item) {
+		const { history } = this.props;
+		const { push } = history;
+		push(item.get('key'));
 		const { changeTab } = this.props;
 		changeTab(item.get('key'));
 	}
@@ -20,7 +24,7 @@ class BottomBar extends Component {
 		const { activeKey } = this.props;
 		return (
 			tabs.map((item) => {
-				let cls = `tab-icon ${item.get('key')}`;
+				let cls = `tab-item ${item.get('key')}`;
 				if (item.get('key') === activeKey) {
 					cls += ' active';
 				}
@@ -54,4 +58,4 @@ const mapDispatchToProps = dispatch => ({
 	},
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(BottomBar);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BottomBar));

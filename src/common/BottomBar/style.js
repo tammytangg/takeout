@@ -16,60 +16,56 @@ const TabWrapper = styled.div`
 `;
 
 const TabItem = styled.div`
-    flex:1;
-    font-size:${px2rem(11)};
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    color:#999; 
-    &.active{
-        color:#000;
+	flex:1;
+	font-size:${px2rem(11)};
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	justify-content:center;
+	color:#999;
+	&.active{
+		color:#000;
+	}
+	.tab-icon{
+		margin-bottom:${px2rem(4)};
+		width:${px2rem(25)};
+		height:${px2rem(25)};
+		background-size:cover;
     }
-
-    .tab-icon{
-        margin-bottom:${px2rem(4)};
-        width:${px2rem(25)};
-        height:${px2rem(25)};
-        background-size:cover;
-    }
-
-    &.home{
-        .tab-icon{
-            background-image:url('img/homeIcon.png');
-        }
-    }
-
-    &.home.active{
-        .tab-icon{
-            background-image:url('img/homeIconActive.png');
-        }
-    }
-
-    &.order{
-        .tab-icon{
-            background-image:url('img/orderIcon.png');
-        }
-    }
-
-    &.order.active{
-        .tab-icon{
-            background-image:url('img/orderIconActive.png');
-        }
-    }
-
-    &.my{
-        .tab-icon{
-            background-image:url('img/myIcon.png');
-        }
-    }
-
-    &.my.active{
-        .tab-icon{
-            background-image:url('img/myIconActive.png');
-        }
-    }
-
+	&.home{
+		.tab-icon{
+			background-image:url('img/homeIcon.png');
+		}
+	}
+	&.home.active{
+		.tab-icon{
+			background-image:url('img/homeIconActive.png');
+		}
+	}
+	&.order{
+		.tab-icon{
+			background-image:url('img/orderIcon.png');
+		}
+	}
+	&.order.active{
+		.tab-icon{
+			background-image:url('img/orderIconActive.png');
+		}
+	}
+	&.my{
+		.tab-icon{
+			background-image:url('img/myIcon.png');
+		}
+	}
+	&.my.active{
+		.tab-icon{
+			background-image:url('img/myIconActive.png');
+		}
+	}
+	a{
+		align-items:center;
+		text-decoration: none;
+	}
 `;
 
 export { TabWrapper, TabItem };
