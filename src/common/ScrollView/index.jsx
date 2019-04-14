@@ -4,14 +4,15 @@ import Loading from '../Loading';
 
 class ScrollView extends Component {
 	componentWillMount() {
-		window.addEventListener('scroll', ScrollView.onLoadPage.bind(this));
+		window.addEventListener('scroll', this.onLoadPage);
 	}
 
 	componentWillUnmount() {
-		window.removeEventListener('scroll', ScrollView.onLoadPage.bind(this));
+		window.removeEventListener('scroll', this.onLoadPage);
 	}
 
-	static onLoadPage() {
+	onLoadPage = () => {
+		console.log('onLoadPage');
 		const { clientHeight } = document.documentElement;
 		const { scrollHeight } = document.body;
 		const { scrollTop } = document.documentElement;
@@ -19,12 +20,11 @@ class ScrollView extends Component {
 		const { isend } = this.props;
 		const { loadCallBack } = this.props;
 		if ((scrollTop + clientHeight) >= (scrollHeight - proLoadDis)) {
-			// console.log('test');
 			if (!isend && loadCallBack) {
 				loadCallBack();
 			}
 		}
-	}
+	};
 
 	render() {
 		const { children } = this.props;

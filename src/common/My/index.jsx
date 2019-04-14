@@ -1,17 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { MyWrapper, HeaderWrapper, ContentWrapper } from './style';
 
-class My extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			text: 'my',
-		};
-	}
-
-	render() {
-		const { text } = this.state;
-		return (
+const My = () => (
 			<MyWrapper>
 				<HeaderWrapper>
 					<img className="avatar" src="http://i.waimai.meituan.com/static/img/default-avatar.png" alt="avatar" />
@@ -29,10 +19,7 @@ class My extends Component {
 					<p className="tel">客服电话: 090-1483-2036</p>
 					<p className="time">服务时间: 9:00～23:00</p>
 				</ContentWrapper>
-				{text}
 			</MyWrapper>
 		);
-	}
-}
 
 export default My;

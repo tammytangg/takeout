@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { OrderWrapper, HeaderWrapper } from './style';
 import { actionCreators } from './store';
 import OrderItem from './OrderItem';
-import ScrollView from '../ScrollView';
+import Loading from '../Loading';
 
 /**
  * @constructor <Order/>
@@ -29,9 +29,8 @@ class Order extends Component {
 		return (
 			<OrderWrapper>
 				<HeaderWrapper>Order</HeaderWrapper>
-				<ScrollView isend={false}>
-					{this.renderItems()}
-				</ScrollView>
+				{this.renderItems()}
+				<Loading />
 			</OrderWrapper>
 		);
 	}
